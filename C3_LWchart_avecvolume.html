@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2001-01-13', open: 111.57, high: 113.440002, low: 111.57, close: 113.029999 },
+    { time: '2001-01-14', open: 112.970001, high: 114, low: 112.739998, close: 114 },
+    { time: '2001-01-15', open: 114.199997, high: 114.540001, low: 113.599998, close: 113.959999 },
+    { time: '2001-01-16', open: 114.07, high: 114.75, low: 114, close: 114.18 },
+    { time: '2001-01-17', open: 114.230003, high: 114.739998, low: 114.029999, close: 114.480003 },
+    { time: '2001-01-18', open: 114.730003, high: 116.970001, low: 114.120003, close: 116.559998 },
+    { time: '2001-01-19', open: 116.93, high: 118.220001, low: 116.480003, close: 117.25 },
+    { time: '2001-01-20', open: 117.169998, high: 118.5, low: 116.889999, close: 117.139999 },
+    { time: '2001-01-21', open: 116.989998, high: 117.650002, low: 116.589996, close: 116.970001 },
+    { time: '2001-01-22', open: 117.089996, high: 117.18, low: 115.830002, close: 116.599998 },
+    { time: '2001-01-23', open: 116.139999, high: 118.169998, low: 115.5, close: 117.849998 },
+    { time: '2001-01-24', open: 118.529999, high: 118.529999, low: 117.470001, close: 117.800003 },
+    { time: '2001-01-25', open: 117.550003, high: 118.489998, low: 117.459999, close: 117.779999 },
+    { time: '2001-01-26', open: 118.18, high: 118.5, low: 116.529999, close: 116.93 },
+    { time: '2001-01-27', open: 116.82, high: 117, low: 116.150002, close: 116.300003 },
+    { time: '2001-01-28', open: 116.779999, high: 117.400002, low: 116.519997, close: 117.199997 },
+    { time: '2001-01-29', open: 116.879997, high: 116.889999, low: 116.150002, close: 116.559998 },
+    { time: '2001-01-30', open: 116.919998, high: 118.25, low: 116.870003, close: 117.25 },
+    { time: '2001-01-31', open: 117.650002, high: 118.080002, low: 116.919998, close: 117.959999 },
+    { time: '2001-02-01', open: 117.650002, high: 117.739998, low: 116.050003, close: 116.139999 },
+    { time: '2001-02-02', open: 116.639999, high: 117.470001, low: 116.470001, close: 117.150002 },
+    { time: '2001-02-03', open: 117.419998, high: 118.25, low: 117.120003, close: 117.5 },
+    { time: '2001-02-04', open: 117.190002, high: 117.870003, low: 116.949997, close: 117.620003 },
+    { time: '2001-02-05', open: 117.519997, high: 118.379997, low: 117.349998, close: 117.360001 },
+    { time: '2001-02-06', },
+    { time: '2001-02-07', },
+    { time: '2001-02-08', },
+    { time: '2001-02-09', },
+    { time: '2001-02-10', open: 117.360001, high: 117.360001, low: 117.360001, close: 117.360001 
+        },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2001-02-10',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.85,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2001-01-13', value: 5531500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-14', value: 5057300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-15', value: 5212400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2001-01-16', value: 4758800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-17', value: 4420700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-18', value: 7737700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-19', value: 8978300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-20', value: 7409700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2001-01-21', value: 5100100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2001-01-22', value: 5978000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2001-01-23', value: 7286200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-24', value: 10280700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2001-01-25', value: 6808800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-26', value: 7565400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2001-01-27', value: 5586700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2001-01-28', value: 5482200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-29', value: 5626800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2001-01-30', value: 4914900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-01-31', value: 6012400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-02-01', value: 7362500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2001-02-02', value: 5425700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-02-03', value: 4507900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-02-04', value: 3434900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2001-02-05', value: 5983500,color: 'rgba(255,82,82, 0.8)' },
+
+])
+</script>
+</body>
+</html>
