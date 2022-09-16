@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2016-09-07', open: 81.199997, high: 81.279999, low: 80.050003, close: 80.260002 },
+{ time: '2016-09-08', open: 80.57, high: 80.629997, low: 79.889999, close: 80.349998 },
+{ time: '2016-09-09', open: 80.07, high: 80.93, low: 80.019997, close: 80.440002 },
+{ time: '2016-09-10', open: 80.650002, high: 80.730003, low: 79.949997, close: 80.690002 },
+{ time: '2016-09-11', open: 81.190002, high: 81.190002, low: 80.230003, close: 80.879997 },
+{ time: '2016-09-12', open: 81.330002, high: 82.440002, low: 80.650002, close: 82.349998 },
+{ time: '2016-09-13', open: 82.400002, high: 83.589996, low: 82.209999, close: 83.209999 },
+{ time: '2016-09-14', open: 82.760002, high: 83.099998, low: 81.879997, close: 82.260002 },
+{ time: '2016-09-15', open: 81.870003, high: 82.900002, low: 81.559998, close: 82.879997 },
+{ time: '2016-09-16', open: 82.540001, high: 84.07, low: 82.540001, close: 84.019997 },
+{ time: '2016-09-17', open: 84.080002, high: 84.790001, low: 84.07, close: 84.370003 },
+{ time: '2016-09-18', open: 84.269997, high: 85.18, low: 83.980003, close: 84.010002 },
+{ time: '2016-09-19', open: 84.18, high: 84.370003, low: 83.370003, close: 83.809998 },
+{ time: '2016-09-20', open: 83.919998, high: 84.110001, low: 83.370003, close: 83.790001 },
+{ time: '2016-09-21', open: 83.830002, high: 84.389999, low: 83.400002, close: 83.440002 },
+{ time: '2016-09-22', open: 83.309998, high: 83.440002, low: 82.550003, close: 83.339996 },
+{ time: '2016-09-23', open: 83.400002, high: 83.699997, low: 83.010002, close: 83.43 },
+{ time: '2016-09-24', open: 83.279999, high: 83.860001, low: 83.099998, close: 83.849998 },
+{ time: '2016-09-25', open: 83.720001, high: 84.199997, low: 83.489998, close: 83.839996 },
+{ time: '2016-09-26', open: 83.449997, high: 83.82, low: 82.599998, close: 83.18 },
+{ time: '2016-09-27', open: 84.160004, high: 84.489998, low: 83.809998, close: 84.110001 },
+{ time: '2016-09-28', open: 84.050003, high: 84.400002, low: 83.620003, close: 84.370003 },
+{ time: '2016-09-29', open: 83.940002, high: 84.529999, low: 83.75, close: 84.400002 },
+{ time: '2016-09-30', open: 84.730003, high: 84.860001, low: 83.709999, close: 83.93 },
+{ time: '2016-10-01', open: 83.699997, high: 83.889999, low: 83.339996, close: 83.779999 },
+{ time: '2016-10-02', open: 84.139999, high: 84.18, low: 83.339996, close: 83.580002 },
+{ time: '2016-10-03', open: 83.150002, high: 83.730003, low: 83, close: 83.43 },
+{ time: '2016-10-04', open: 83.68, high: 83.860001, low: 82.510002, close: 82.589996 },
+{ time: '2016-10-05', open: 82.589996, high: 82.839996, low: 82.32, close: 82.660004 },
+{ time: '2016-10-06', open: 83.209999, high: 83.779999, low: 82.800003, close: 83.540001 },
+{ time: '2016-10-07', open: 83.690002, high: 84.239998, low: 83.360001, close: 83.949997 },
+{ time: '2016-10-08', open: 83.989998, high: 84.239998, low: 82.809998, close: 83.199997 },
+{ time: '2016-10-09', open: 82.900002, high: 83.510002, low: 82.510002, close: 83.230003 },
+{ time: '2016-10-10', open: 83.800003, high: 84.059998, low: 83.32, close: 83.779999 },
+{ time: '2016-10-11', open: 83.870003, high: 84.260002, low: 83.639999, close: 83.860001 },
+{ time: '2016-10-12', open: 84.32, high: 84.669998, low: 83.959999, close: 84.029999 },
+{ time: '2016-10-13', open: 84.43, high: 84.489998, low: 83.419998, close: 83.43 },
+{ time: '2016-10-14', open: 83.269997, high: 83.830002, low: 83.220001, close: 83.489998 },
+{ time: '2016-10-15', },
+{ time: '2016-10-16', },
+{ time: '2016-10-17', },
+{ time: '2016-10-18', },
+{ time: '2016-10-19', open: 83.489998, high: 83.489998, low: 83.489998, close: 83.489998 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2016-10-19',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.89,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2016-09-07', value: 4116300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-08', value: 2628500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-09', value: 2342400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-10', value: 2642800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-11', value: 2538100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-12', value: 4305000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-13', value: 3105600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-14', value: 3732900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-15', value: 2650700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-16', value: 2050800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-17', value: 2531500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-18', value: 3115900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-19', value: 2083500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-20', value: 1895300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-21', value: 2163200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-22', value: 2681900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-23', value: 2157100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-24', value: 1584900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-25', value: 2286700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-26', value: 1728600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-27', value: 1864900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-09-28', value: 2582700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-29', value: 1922100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-09-30', value: 2733700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-10-01', value: 1954400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-10-02', value: 1859000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-10-03', value: 1758500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-10-04', value: 2121000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-10-05', value: 2074400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-10-06', value: 2758600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-10-07', value: 2141100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-10-08', value: 2526500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-10-09', value: 2753400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2016-10-10', value: 6498300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-10-11', value: 2795100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-10-12', value: 2021900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-10-13', value: 2113300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2016-10-14', value: 3563800,color: 'rgba(0, 150, 136, 0.8)' },
+])
+</script>
+</body>
+</html>

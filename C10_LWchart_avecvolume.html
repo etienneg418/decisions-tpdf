@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2005-10-04', open: 42.119999, high: 42.849998, low: 42.099998, close: 42.68 },
+{ time: '2005-10-05', open: 42.77, high: 43.279999, low: 42.700001, close: 43.130001 },
+{ time: '2005-10-06', open: 43.200001, high: 43.209999, low: 42.68, close: 43 },
+{ time: '2005-10-07', open: 43.099998, high: 43.32, low: 43.040001, close: 43.119999 },
+{ time: '2005-10-08', open: 43.360001, high: 43.59, low: 43.290001, close: 43.490002 },
+{ time: '2005-10-09', open: 43.5, high: 43.540001, low: 43.099998, close: 43.110001 },
+{ time: '2005-10-10', open: 43.060001, high: 43.459999, low: 43.040001, close: 43.459999 },
+{ time: '2005-10-11', open: 43.330002, high: 43.73, low: 43.330002, close: 43.439999 },
+{ time: '2005-10-12', open: 43.57, high: 44, low: 43.560001, close: 43.950001 },
+{ time: '2005-10-13', open: 43.950001, high: 44.25, low: 43.889999, close: 44.130001 },
+{ time: '2005-10-14', open: 44.130001, high: 44.419998, low: 44.080002, close: 44.41 },
+{ time: '2005-10-15', open: 44.349998, high: 44.52, low: 44.150002, close: 44.18 },
+{ time: '2005-10-16', open: 43.75, high: 43.849998, low: 43.52, close: 43.580002 },
+{ time: '2005-10-17', open: 43.560001, high: 44.150002, low: 43.450001, close: 44.119999 },
+{ time: '2005-10-18', open: 43.880001, high: 43.959999, low: 43.400002, close: 43.549999 },
+{ time: '2005-10-19', open: 43.299999, high: 43.75, low: 43.200001, close: 43.599998 },
+{ time: '2005-10-20', open: 43.619999, high: 43.779999, low: 43.23, close: 43.259998 },
+{ time: '2005-10-21', open: 43.27, high: 43.299999, low: 42.959999, close: 43.09 },
+{ time: '2005-10-22', open: 43.150002, high: 43.41, low: 43.080002, close: 43.25 },
+{ time: '2005-10-23', open: 43.16, high: 43.75, low: 43.16, close: 43.580002 },
+{ time: '2005-10-24', open: 43.560001, high: 43.84, low: 43.279999, close: 43.330002 },
+{ time: '2005-10-25', },
+{ time: '2005-10-26', },
+{ time: '2005-10-27', },
+{ time: '2005-10-28', open: 43.330002, high: 43.330002, low: 43.330002, close: 43.330002 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2005-10-29',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.85,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2005-10-04', value: 14826900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-05', value: 10114200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-06', value: 15571300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2005-10-07', value: 10664700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-08', value: 11727600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-09', value: 9975900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2005-10-10', value: 9202900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-11', value: 11948100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-12', value: 12078800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-13', value: 7526100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-14', value: 8243300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-15', value: 16745000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2005-10-16', value: 12696200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2005-10-17', value: 21562500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-18', value: 12161900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2005-10-19', value: 12936400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-20', value: 10893700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2005-10-21', value: 10465200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2005-10-22', value: 14924400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-23', value: 12092400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2005-10-24', value: 13974700,color: 'rgba(255,82,82, 0.8)' },
+])
+</script>
+</body>
+</html>

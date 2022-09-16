@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2018-09-05', open: 44.470001, high: 44.5, low: 44.029999, close: 44.099998 },
+{ time: '2018-09-06', open: 43.849998, high: 44.150002, low: 43.630001, close: 43.669998 },
+{ time: '2018-09-07', open: 43.66, high: 44.240002, low: 43.650002, close: 44.099998 },
+{ time: '2018-09-08', open: 44.18, high: 44.48, low: 44.099998, close: 44.450001 },
+{ time: '2018-09-09', open: 44.400002, high: 44.5, low: 43.91, close: 44.41 },
+{ time: '2018-09-10', open: 44.439999, high: 44.450001, low: 43.93, close: 44.029999 },
+{ time: '2018-09-11', open: 44.09, high: 44.5, low: 44.09, close: 44.439999 },
+{ time: '2018-09-12', open: 44.59, high: 44.939999, low: 44.419998, close: 44.790001 },
+{ time: '2018-09-13', open: 44.84, high: 44.84, low: 44.330002, close: 44.52 },
+{ time: '2018-09-14', open: 44.419998, high: 44.830002, low: 44.189999, close: 44.209999 },
+{ time: '2018-09-15', open: 44.25, high: 44.299999, low: 43.860001, close: 44.119999 },
+{ time: '2018-09-16', open: 44.119999, high: 44.16, low: 43.439999, close: 43.869999 },
+{ time: '2018-09-17', open: 43.900002, high: 43.919998, low: 43.369999, close: 43.380001 },
+{ time: '2018-09-18', open: 43.400002, high: 43.84, low: 43.25, close: 43.810001 },
+{ time: '2018-09-19', open: 43.549999, high: 43.970001, low: 43.25, close: 43.57 },
+{ time: '2018-09-20', open: 43.259998, high: 43.700001, low: 43.259998, close: 43.540001 },
+{ time: '2018-09-21', open: 43.540001, high: 43.790001, low: 43.25, close: 43.450001 },
+{ time: '2018-09-22', open: 43.389999, high: 43.580002, low: 42.959999, close: 43.48 },
+{ time: '2018-09-23', open: 43.240002, high: 43.389999, low: 42.84, close: 42.900002 },
+{ time: '2018-09-24', open: 42.529999, high: 43.27, low: 42.490002, close: 43.27 },
+{ time: '2018-09-25', open: 44.490002, high: 44.509998, low: 43.84, close: 44.27 },
+{ time: '2018-09-26', open: 44.360001, high: 44.419998, low: 43.790001, close: 44.060001 },
+{ time: '2018-09-27', open: 44.040001, high: 44.360001, low: 43.75, close: 44.299999 },
+{ time: '2018-09-28', open: 44.25, high: 44.869999, low: 44.009998, close: 44.689999 },
+{ time: '2018-09-29', },
+{ time: '2018-09-30', },
+{ time: '2018-10-01', },
+{ time: '2018-10-02', },
+{ time: '2018-10-03', open: 44.689999, high: 44.689999, low: 44.689999, close: 44.689999 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2018-10-03',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.89,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2018-09-05', value: 11458400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-06', value: 12945800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-07', value: 15334900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-08', value: 15506000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-09', value: 11139400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-10', value: 11137800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-11', value: 8734400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-12', value: 10741000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-13', value: 8303600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-14', value: 10604700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-15', value: 12605300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-16', value: 24653200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-17', value: 12734400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-18', value: 9867800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-19', value: 21106500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-20', value: 3375400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-21', value: 6095700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-22', value: 9366900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-23', value: 9328400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-24', value: 14650300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-25', value: 16483900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-26', value: 11227700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2018-09-27', value: 14930400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2018-09-28', value: 20891300,color: 'rgba(0, 150, 136, 0.8)' },
+])
+</script>
+</body>
+</html>

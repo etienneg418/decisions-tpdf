@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2017-06-23', open: 64.360001, high: 64.370003, low: 63.549999, close: 64.300003 },
+{ time: '2017-06-24', open: 64.18, high: 64.279999, low: 63.360001, close: 63.529999 },
+{ time: '2017-06-25', open: 64.019997, high: 64.730003, low: 64.010002, close: 64.519997 },
+{ time: '2017-06-26', open: 64.809998, high: 65, low: 64.580002, close: 64.959999 },
+{ time: '2017-06-27', open: 65.059998, high: 65.260002, low: 64.620003, close: 65.18 },
+{ time: '2017-06-28', open: 65.230003, high: 66, low: 65.18, close: 65.980003 },
+{ time: '2017-06-29', open: 65.989998, high: 66.32, low: 65.900002, close: 66.019997 },
+{ time: '2017-06-30', open: 65.970001, high: 66.029999, low: 65.300003, close: 65.449997 },
+{ time: '2017-07-01', open: 65.309998, high: 66.029999, low: 65.25, close: 65.879997 },
+{ time: '2017-07-02', open: 65.589996, high: 65.93, low: 65.529999, close: 65.580002 },
+{ time: '2017-07-03', open: 65.589996, high: 66, low: 65.25, close: 65.879997 },
+{ time: '2017-07-04', open: 65.75, high: 65.879997, low: 65.110001, close: 65.480003 },
+{ time: '2017-07-05', open: 65.32, high: 65.599998, low: 64.830002, close: 65.400002 },
+{ time: '2017-07-06', open: 65.440002, high: 65.459999, low: 64.610001, close: 64.830002 },
+{ time: '2017-07-07', open: 64.959999, high: 65.089996, low: 64.410004, close: 64.93 },
+{ time: '2017-07-08', open: 65.110001, high: 65.400002, low: 65, close: 65.199997 },
+{ time: '2017-07-09', open: 65.110001, high: 65.540001, low: 64.839996, close: 65.129997 },
+{ time: '2017-07-10', open: 65.279999, high: 65.410004, low: 64.93, close: 65.230003 },
+{ time: '2017-07-11', open: 64.970001, high: 65.279999, low: 64.360001, close: 65.260002 },
+{ time: '2017-07-12', open: 65.540001, high: 65.690002, low: 64.5, close: 65.120003 },
+{ time: '2017-07-13', open: 65.260002, high: 65.370003, low: 65, close: 65.279999 },
+{ time: '2017-07-14', open: 65.160004, high: 65.25, low: 64.790001, close: 65.190002 },
+{ time: '2017-07-15', open: 65.279999, high: 65.550003, low: 64.540001, close: 65.269997 },
+{ time: '2017-07-16', open: 65.230003, high: 65.330002, low: 64.879997, close: 65 },
+{ time: '2017-07-17', open: 64.339996, high: 65.449997, low: 64.339996, close: 65 },
+{ time: '2017-07-18', open: 64.830002, high: 65.300003, low: 64.760002, close: 65.220001 },
+{ time: '2017-07-19', open: 65.529999, high: 65.879997, low: 65.220001, close: 65.699997 },
+{ time: '2017-07-20', open: 65.620003, high: 65.870003, low: 65.459999, close: 65.559998 },
+{ time: '2017-07-21', open: 65.330002, high: 65.709999, low: 65.129997, close: 65.709999 },
+{ time: '2017-07-22', open: 65.860001, high: 65.949997, low: 65.559998, close: 65.910004 },
+{ time: '2017-07-23', open: 65.970001, high: 66.32, low: 65.650002, close: 65.690002 },
+{ time: '2017-07-24', },
+{ time: '2017-07-25', },
+{ time: '2017-07-26', },
+{ time: '2017-07-27', },
+{ time: '2017-07-28', open: 65.690002, high: 65.690002, low: 65.690002, close: 65.690002 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2017-07-28',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.89,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2017-06-23', value: 19214300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-06-24', value: 9024700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-06-25', value: 12247700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-06-26', value: 8517800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-06-27', value: 7428000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-06-28', value: 6503300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-06-29', value: 4995100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-06-30', value: 5943900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-01', value: 5702400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-02', value: 4959700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-03', value: 16116200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-04', value: 9243100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-05', value: 11886900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-06', value: 15359900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-07', value: 7934600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-08', value: 8476600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-09', value: 6784600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-10', value: 7402900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-11', value: 8978800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-12', value: 8359900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-13', value: 8095600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-14', value: 11699800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-15', value: 14715500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-16', value: 10125000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-17', value: 12367900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-18', value: 10531400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-19', value: 12546100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-20', value: 10466300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-07-21', value: 7482100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-22', value: 13562900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-07-23', value: 12275900,color: 'rgba(255,82,82, 0.8)' },
+])
+</script>
+</body>
+</html>

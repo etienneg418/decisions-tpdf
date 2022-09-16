@@ -1,0 +1,108 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2006-07-24', open: 40.549999, high: 41.279999, low: 40.5, close: 41.200001 },
+{ time: '2006-07-25', open: 41.130001, high: 41.360001, low: 41.049999, close: 41.23 },
+{ time: '2006-07-26', open: 41.200001, high: 41.5, low: 41.200001, close: 41.459999 },
+{ time: '2006-07-27', open: 41.509998, high: 41.68, low: 41.400002, close: 41.599998 },
+{ time: '2006-07-28', open: 41.669998, high: 42, low: 41.619999, close: 41.66 },
+{ time: '2006-07-29', open: 41.700001, high: 41.91, low: 41.599998, close: 41.779999 },
+{ time: '2006-07-30', open: 41.75, high: 41.75, low: 41.59, close: 41.669998 },
+{ time: '2006-07-31', open: 41.68, high: 42.07, low: 41.639999, close: 41.959999 },
+{ time: '2006-08-01', open: 42.009998, high: 42.349998, low: 41.880001, close: 42.16 },
+{ time: '2006-08-02', open: 42.080002, high: 42.560001, low: 42.07, close: 42.470001 },
+{ time: '2006-08-03', open: 42.470001, high: 42.490002, low: 42.25, close: 42.48 },
+{ time: '2006-08-04', open: 42.34, high: 42.43, low: 42.119999, close: 42.18 },
+{ time: '2006-08-05', open: 42, high: 42.240002, low: 41.950001, close: 41.990002 },
+{ time: '2006-08-06', open: 42, high: 42.029999, low: 41.740002, close: 41.990002 },
+{ time: '2006-08-07', open: 42.09, high: 42.110001, low: 41.919998, close: 42.029999 },
+{ time: '2006-08-08', open: 42.23, high: 42.400002, low: 42.150002, close: 42.290001 },
+{ time: '2006-08-09', open: 41.919998, high: 42.119999, low: 41.84, close: 42.029999 },
+{ time: '2006-08-10', open: 41.98, high: 42.099998, low: 41.830002, close: 41.970001 },
+{ time: '2006-08-11', open: 41.98, high: 42.279999, low: 41.970001, close: 42.119999 },
+{ time: '2006-08-12', open: 42.029999, high: 42.389999, low: 41.900002, close: 42.25 },
+{ time: '2006-08-13', },
+{ time: '2006-08-14', },
+{ time: '2006-08-15', },
+{ time: '2006-08-16', },
+{ time: '2006-08-17', open: 42.25, high: 42.25, low: 42.25, close: 42.25 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2006-08-17',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.89,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2006-07-24', value: 22214800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-07-25', value: 15065100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-07-26', value: 17072600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-07-27', value: 11186800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-07-28', value: 12856800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2006-07-29', value: 13215300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-07-30', value: 12186400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2006-07-31', value: 15946800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-08-01', value: 14662000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-08-02', value: 15507600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-08-03', value: 11740000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-08-04', value: 16307800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2006-08-05', value: 11273700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2006-08-06', value: 14636000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2006-08-07', value: 14496400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2006-08-08', value: 16369700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-08-09', value: 12831500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-08-10', value: 9844500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2006-08-11', value: 22757800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2006-08-12', value: 16004200,color: 'rgba(0, 150, 136, 0.8)' },
+])
+</script>
+</body>
+</html>

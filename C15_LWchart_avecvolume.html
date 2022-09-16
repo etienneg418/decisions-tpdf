@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2017-08-22', open: 29.59, high: 29.77, low: 29.33, close: 29.5 },
+{ time: '2017-08-23', open: 29.620001, high: 29.74, low: 29.33, close: 29.629999 },
+{ time: '2017-08-24', open: 29.82, high: 30.200001, low: 29.610001, close: 29.860001 },
+{ time: '2017-08-25', open: 29.530001, high: 29.83, low: 29.049999, close: 29.08 },
+{ time: '2017-08-26', open: 29.120001, high: 29.370001, low: 28.799999, close: 28.809999 },
+{ time: '2017-08-27', open: 28.879999, high: 29.190001, low: 28.809999, close: 28.83 },
+{ time: '2017-08-28', open: 28.940001, high: 29.01, low: 28.209999, close: 28.219999 },
+{ time: '2017-08-29', open: 27.02, high: 27.299999, low: 26.75, close: 27.09 },
+{ time: '2017-08-30', open: 27.24, high: 27.290001, low: 26.799999, close: 26.84 },
+{ time: '2017-08-31', open: 26.879999, high: 26.969999, low: 26.629999, close: 26.66 },
+{ time: '2017-09-01', open: 26.67, high: 26.700001, low: 26.34, close: 26.52 },
+{ time: '2017-09-02', open: 26.799999, high: 26.799999, low: 26.469999, close: 26.73 },
+{ time: '2017-09-03', open: 26.76, high: 26.799999, low: 26.459999, close: 26.709999 },
+{ time: '2017-09-04', open: 26.709999, high: 27.17, low: 26.67, close: 26.950001 },
+{ time: '2017-09-05', open: 27.23, high: 27.77, low: 27.200001, close: 27.700001 },
+{ time: '2017-09-06', open: 27.540001, high: 27.58, low: 27.17, close: 27.389999 },
+{ time: '2017-09-07', open: 27.360001, high: 27.379999, low: 27.040001, close: 27.08 },
+{ time: '2017-09-08', open: 27.01, high: 27.389999, low: 26.77, close: 27.360001 },
+{ time: '2017-09-09', open: 27.110001, high: 27.360001, low: 26.860001, close: 26.950001 },
+{ time: '2017-09-10', open: 27.049999, high: 27.129999, low: 26.49, close: 26.620001 },
+{ time: '2017-09-11', open: 26.780001, high: 26.82, low: 26.4, close: 26.43 },
+{ time: '2017-09-12', open: 26.5, high: 26.629999, low: 26.34, close: 26.370001 },
+{ time: '2017-09-13', open: 26.379999, high: 26.93, low: 26.26, close: 26.67 },
+{ time: '2017-09-14', open: 26.809999, high: 26.98, low: 26.610001, close: 26.73 },
+{ time: '2017-09-15', open: 26.82, high: 26.82, low: 26.370001, close: 26.459999 },
+{ time: '2017-09-16', open: 26.559999, high: 26.969999, low: 26.52, close: 26.940001 },
+{ time: '2017-09-17', open: 27.049999, high: 27.49, low: 27.049999, close: 27.32 },
+{ time: '2017-09-18', open: 27.530001, high: 27.620001, low: 27.08, close: 27.24 },
+{ time: '2017-09-19', open: 27.32, high: 27.52, low: 26.950001, close: 27.110001 },
+{ time: '2017-09-20', open: 27.110001, high: 27.129999, low: 26.700001, close: 26.809999 },
+{ time: '2017-09-21', open: 26.790001, high: 27.219999, low: 26.68, close: 27.1 },
+{ time: '2017-09-22', open: 27.25, high: 27.629999, low: 27.139999, close: 27.559999 },
+{ time: '2017-09-23', open: 27.690001, high: 27.73, low: 27.25, close: 27.309999 },
+{ time: '2017-09-24', open: 27.360001, high: 27.68, low: 27.15, close: 27.68 },
+{ time: '2017-09-25', open: 27.450001, high: 27.49, low: 27, close: 27.450001 },
+{ time: '2017-09-26', open: 27.200001, high: 27.25, low: 27, close: 27.059999 },
+{ time: '2017-09-27', open: 27.030001, high: 27.200001, low: 26.700001, close: 26.860001 },
+{ time: '2017-09-28', open: 26.889999, high: 27.09, low: 26.57, close: 26.959999 },
+{ time: '2017-09-29', open: 26.709999, high: 26.9, low: 26.549999, close: 26.549999 },
+{ time: '2017-09-30', open: 26.59, high: 26.77, low: 26.370001, close: 26.709999 },
+{ time: '2017-10-01', open: 27.25, high: 27.73, low: 27.15, close: 27.620001 },
+{ time: '2017-10-02', open: 27.629999, high: 27.65, low: 27.16, close: 27.25 },
+{ time: '2017-10-03', open: 27.27, high: 27.34, low: 26.73, close: 26.74 },
+{ time: '2017-10-04', open: 26.77, high: 26.879999, low: 26.639999, close: 26.690001 },
+{ time: '2017-10-05', open: 26.75, high: 26.790001, low: 26.459999, close: 26.549999 },
+{ time: '2017-10-06', open: 26.719999, high: 26.75, low: 26.559999, close: 26.700001 },
+{ time: '2017-10-07', open: 26.65, high: 26.98, low: 26.290001, close: 26.459999 },
+{ time: '2017-10-08', open: 26.49, high: 26.93, low: 26.280001, close: 26.83 },
+{ time: '2017-10-09', open: 26.9, high: 27.08, low: 26.76, close: 26.889999 },
+{ time: '2017-10-10', open: 26.83, high: 27.290001, low: 26.83, close: 27.209999 },
+{ time: '2017-10-11', open: 27.15, high: 27.23, low: 27.01, close: 27.040001 },
+{ time: '2017-10-12', open: 27.190001, high: 27.469999, low: 27.059999, close: 27.25 },
+{ time: '2017-10-13', open: 27.1, high: 27.290001, low: 27.040001, close: 27.25 },
+{ time: '2017-10-14', open: 27.299999, high: 27.450001, low: 27, close: 27.15 },
+{ time: '2017-10-15', open: 27.200001, high: 27.639999, low: 27.200001, close: 27.610001 },
+{ time: '2017-10-16', },
+{ time: '2017-10-17', },
+{ time: '2017-10-18', },
+{ time: '2017-10-19', },
+{ time: '2017-10-20', open: 27.610001, high: 27.610001, low: 27.610001, close: 27.610001 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2017-10-20',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.90,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2017-08-22', value: 57131600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-08-23', value: 38070800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-08-24', value: 43401500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-08-25', value: 57871800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-08-26', value: 49841800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-08-27', value: 43291200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-08-28', value: 61112300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-08-29', value: 131689200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-08-30', value: 76086100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-08-31', value: 50955600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-01', value: 64083300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-02', value: 57179300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-03', value: 47070400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-04', value: 66360300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-05', value: 57845700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-06', value: 85198700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-07', value: 45018600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-08', value: 53018400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-09', value: 69551400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-10', value: 83690200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-11', value: 53173800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-12', value: 49777500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-13', value: 68283800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-14', value: 39182300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-15', value: 46162100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-16', value: 47031100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-17', value: 52282800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-18', value: 43966300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-19', value: 45080100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-20', value: 42077500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-21', value: 42046100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-22', value: 50486900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-23', value: 53519900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-24', value: 52607300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-25', value: 98776500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-26', value: 20842400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-27', value: 31631100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-28', value: 39394000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-09-29', value: 28239900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-09-30', value: 42749500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-10-01', value: 52899300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-10-02', value: 48294400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-10-03', value: 52521100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-10-04', value: 37110400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-10-05', value: 44703100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-10-06', value: 49047900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-10-07', value: 71431300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-10-08', value: 55512100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-10-09', value: 48324400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-10-10', value: 48244500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-10-11', value: 41077400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-10-12', value: 51685900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-10-13', value: 52167700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2017-10-14', value: 58650600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2017-10-15', value: 50387700,color: 'rgba(0, 150, 136, 0.8)' },
+])
+</script>
+</body>
+</html>

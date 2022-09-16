@@ -1,0 +1,171 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2002-03-06', open: 80.339996, high: 81.080002, low: 79.959999, close: 81.059998 },
+{ time: '2002-03-07', open: 81.370003, high: 81.760002, low: 80.800003, close: 80.800003 },
+{ time: '2002-03-08', open: 80.800003, high: 80.980003, low: 80.190002, close: 80.290001 },
+{ time: '2002-03-09', open: 80.290001, high: 80.519997, low: 80, close: 80.32 },
+{ time: '2002-03-10', open: 80.620003, high: 81.139999, low: 80.169998, close: 80.57 },
+{ time: '2002-03-11', open: 80.540001, high: 80.989998, low: 80.540001, close: 80.870003 },
+{ time: '2002-03-12', open: 81, high: 81.190002, low: 80.720001, close: 81.169998 },
+{ time: '2002-03-13', open: 80.949997, high: 81.199997, low: 80.709999, close: 80.900002 },
+{ time: '2002-03-14', open: 81.139999, high: 81.550003, low: 80.970001, close: 81.300003 },
+{ time: '2002-03-15', open: 81.57, high: 82.150002, low: 81.5, close: 82 },
+{ time: '2002-03-16', open: 82, high: 82.529999, low: 81.809998, close: 82.529999 },
+{ time: '2002-03-17', open: 82.480003, high: 83.260002, low: 82.360001, close: 83.239998 },
+{ time: '2002-03-18', open: 83.019997, high: 83.629997, low: 82.589996, close: 82.970001 },
+{ time: '2002-03-19', open: 82.400002, high: 82.809998, low: 81.330002, close: 81.330002 },
+{ time: '2002-03-20', open: 81.339996, high: 83.129997, low: 81.18, close: 82.970001 },
+{ time: '2002-03-21', open: 82.410004, high: 82.440002, low: 81.620003, close: 81.889999 },
+{ time: '2002-03-22', open: 81.459999, high: 82.220001, low: 81.449997, close: 81.489998 },
+{ time: '2002-03-23', open: 81.419998, high: 82.129997, low: 81.190002, close: 82.010002 },
+{ time: '2002-03-24', open: 81.739998, high: 82.260002, low: 81.419998, close: 82.07 },
+{ time: '2002-03-25', open: 82.43, high: 83.040001, low: 82.230003, close: 82.510002 },
+{ time: '2002-03-26', open: 82.970001, high: 83.230003, low: 82.32, close: 82.480003 },
+{ time: '2002-03-27', open: 82.919998, high: 83.25, low: 82.269997, close: 83.220001 },
+{ time: '2002-03-28', open: 83.419998, high: 83.790001, low: 83.199997, close: 83.360001 },
+{ time: '2002-03-29', open: 83.330002, high: 83.449997, low: 82.519997, close: 82.540001 },
+{ time: '2002-03-30', open: 82.150002, high: 82.260002, low: 81.690002, close: 81.809998 },
+{ time: '2002-03-31', open: 81.790001, high: 82.379997, low: 81.5, close: 82.160004 },
+{ time: '2002-04-01', open: 82.379997, high: 83.010002, low: 81.940002, close: 82.970001 },
+{ time: '2002-04-02', open: 82.720001, high: 83.059998, low: 81.790001, close: 81.919998 },
+{ time: '2002-04-03', open: 82.160004, high: 83.040001, low: 81.68, close: 82.699997 },
+{ time: '2002-04-04', open: 82.419998, high: 83.110001, low: 82.300003, close: 82.860001 },
+{ time: '2002-04-05', open: 83.279999, high: 83.529999, low: 82.580002, close: 82.730003 },
+{ time: '2002-04-06', open: 82.959999, high: 83.449997, low: 82.900002, close: 83.349998 },
+{ time: '2002-04-07', open: 83.120003, high: 83.480003, low: 82.879997, close: 83.360001 },
+{ time: '2002-04-08', open: 83.489998, high: 83.699997, low: 82.639999, close: 82.879997 },
+{ time: '2002-04-09', open: 83.129997, high: 83.540001, low: 82.940002, close: 83.120003 },
+{ time: '2002-04-10', open: 82.68, high: 82.790001, low: 81.57, close: 82.040001 },
+{ time: '2002-04-11', open: 81.839996, high: 82.540001, low: 81.82, close: 82.25 },
+{ time: '2002-04-12', open: 81.650002, high: 82.129997, low: 81.110001, close: 81.870003 },
+{ time: '2002-04-13', open: 82.040001, high: 83.190002, low: 82.040001, close: 82.449997 },
+{ time: '2002-04-14', open: 82.580002, high: 82.690002, low: 82.040001, close: 82.150002 },
+{ time: '2002-04-15', open: 81.5, high: 82.370003, low: 81.349998, close: 81.580002 },
+{ time: '2002-04-16', open: 81.650002, high: 82.870003, low: 81.650002, close: 82.809998 },
+{ time: '2002-04-17', open: 83.050003, high: 83.099998, low: 82.169998, close: 82.5 },
+{ time: '2002-04-18', open: 82.019997, high: 82.540001, low: 81.580002, close: 82.349998 },
+{ time: '2002-04-19', open: 83.269997, high: 83.589996, low: 82.709999, close: 83.169998 },
+{ time: '2002-04-20', open: 83.169998, high: 83.169998, low: 81.699997, close: 82.029999 },
+{ time: '2002-04-21', open: 81.620003, high: 82.260002, low: 81.410004, close: 81.75 },
+{ time: '2002-04-22', open: 81.959999, high: 82.269997, low: 81.610001, close: 81.919998 },
+{ time: '2002-04-23', open: 82.519997, high: 83.360001, low: 82.110001, close: 82.220001 },
+{ time: '2002-04-24', open: 82.440002, high: 82.900002, low: 82.360001, close: 82.510002 },
+{ time: '2002-04-25', open: 82.639999, high: 82.690002, low: 81.330002, close: 81.620003 },
+{ time: '2002-04-26', },
+{ time: '2002-04-27', },
+{ time: '2002-04-28', },
+{ time: '2002-04-29', },
+{ time: '2002-04-30', open: 81.620003, high: 81.620003, low: 81.620003, close: 81.620003 },
+
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2002-04-30',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.90,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2002-03-06', value: 7954500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-07', value: 10007800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-08', value: 5028000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-09', value: 5773700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-10', value: 7932200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-11', value: 4766700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-12', value: 4128700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-13', value: 7386100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-14', value: 6240600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-15', value: 6408900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-16', value: 8140400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-17', value: 9304700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-18', value: 7961100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-19', value: 11563000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-20', value: 9882700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-21', value: 8834300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-22', value: 10999500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-23', value: 10580300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-24', value: 11702000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-25', value: 8361700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-26', value: 6473300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-27', value: 7536200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-03-28', value: 6599400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-29', value: 8283700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-30', value: 8486800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-03-31', value: 7969500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-01', value: 7974300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-02', value: 5885400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-03', value: 9776800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-04', value: 8155400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-05', value: 5772000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-06', value: 6163400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-07', value: 7687100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-08', value: 8238100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-09', value: 7371500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-10', value: 6227400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-11', value: 3923600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-12', value: 6810900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-13', value: 6698100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-14', value: 8473700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-15', value: 11680400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-16', value: 8440900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-17', value: 6945200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-18', value: 8043200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-19', value: 16267000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-20', value: 15085900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-21', value: 8748400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-22', value: 7039200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-23', value: 10919600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-04-24', value: 10024000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-04-25', value: 10881500,color: 'rgba(255,82,82, 0.8)' },
+])
+</script>
+</body>
+</html>

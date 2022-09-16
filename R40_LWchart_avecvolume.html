@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2000-04-26', open: 81.389999, high: 82.440002, low: 81.220001, close: 82.099998 },
+{ time: '2000-04-27', open: 83.199997, high: 83.580002, low: 82.550003, close: 82.629997 },
+{ time: '2000-04-28', open: 82.699997, high: 83.040001, low: 82.040001, close: 83 },
+{ time: '2000-04-29', open: 83.209999, high: 83.900002, low: 83.120003, close: 83.470001 },
+{ time: '2000-04-30', open: 83.580002, high: 83.839996, low: 83.059998, close: 83.489998 },
+{ time: '2000-05-01', open: 83.489998, high: 83.93, low: 82.940002, close: 83.260002 },
+{ time: '2000-05-02', open: 83.239998, high: 85.349998, low: 83.239998, close: 85.260002 },
+{ time: '2000-05-03', open: 85.690002, high: 85.849998, low: 84.120003, close: 84.43 },
+{ time: '2000-05-04', open: 85.089996, high: 85.870003, low: 84.93, close: 85.370003 },
+{ time: '2000-05-05', open: 86, high: 86.040001, low: 85.010002, close: 85.550003 },
+{ time: '2000-05-06', open: 85.160004, high: 85.260002, low: 84.25, close: 84.269997 },
+{ time: '2000-05-07', open: 84.860001, high: 85.099998, low: 84.07, close: 84.790001 },
+{ time: '2000-05-08', open: 82.610001, high: 84.730003, low: 81.949997, close: 83.699997 },
+{ time: '2000-05-09', open: 83.769997, high: 84.919998, low: 83.730003, close: 84.540001 },
+{ time: '2000-05-10', open: 84.290001, high: 85.269997, low: 84.25, close: 84.720001 },
+{ time: '2000-05-11', open: 85.099998, high: 85.849998, low: 84.370003, close: 84.459999 },
+{ time: '2000-05-12',  },
+{ time: '2000-05-13',  },
+{ time: '2000-05-14',  },
+{ time: '2000-05-15',  },
+{ time: '2000-05-16', open: 84.459999, high: 84.459999, low: 84.459999, close: 84.459999 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2000-05-16',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.89,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2000-04-26', value: 6965600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2000-04-27', value: 7166800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2000-04-28', value: 5384300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2000-04-29', value: 5382100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2000-04-30', value: 4884400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2000-05-01', value: 4861100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2000-05-02', value: 7277700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2000-05-03', value: 8053100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2000-05-04', value: 6620300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2000-05-05', value: 13852700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2000-05-06', value: 8770400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2000-05-07', value: 10519500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2000-05-08', value: 16357100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2000-05-09', value: 6080600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2000-05-10', value: 7452700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2000-05-11', value: 7876400,color: 'rgba(255,82,82, 0.8)' },
+])
+</script>
+</body>
+</html>

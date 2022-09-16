@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2012-01-10', open: 124.5, high: 124.5, low: 122.150002, close: 123.160004 },
+{ time: '2012-01-11', open: 123.580002, high: 125.239998, low: 123.57, close: 124.980003 },
+{ time: '2012-01-12', open: 125.220001, high: 125.790001, low: 125.110001, close: 125.580002 },
+{ time: '2012-01-13', open: 125.889999, high: 127.709999, low: 125.580002, close: 127.349998 },
+{ time: '2012-01-14', open: 127.540001, high: 127.779999, low: 126.739998, close: 127.5 },
+{ time: '2012-01-15', open: 127.330002, high: 127.800003, low: 126.959999, close: 127.459999 },
+{ time: '2012-01-16', open: 128.080002, high: 128.490005, low: 127.779999, close: 128.330002 },
+{ time: '2012-01-17', open: 128.690002, high: 129.130005, low: 128.309998, close: 128.600006 },
+{ time: '2012-01-18', open: 128.770004, high: 128.990005, low: 127.949997, close: 128.199997 },
+{ time: '2012-01-19', open: 127.339996, high: 127.75, low: 126.720001, close: 127.110001 },
+{ time: '2012-01-20', open: 127.349998, high: 127.349998, low: 126.050003, close: 126.800003 },
+{ time: '2012-01-21', open: 125.620003, high: 126.260002, low: 124.57, close: 125.480003 },
+{ time: '2012-01-22', open: 125.459999, high: 126.239998, low: 125.199997, close: 125.940002 },
+{ time: '2012-01-23', open: 126.379997, high: 126.75, low: 125.260002, close: 125.459999 },
+{ time: '2012-01-24', open: 125.43, high: 125.550003, low: 124.099998, close: 124.690002 },
+{ time: '2012-01-25', open: 125.900002, high: 128.25, low: 125.900002, close: 127.980003 },
+{ time: '2012-01-26', open: 127.809998, high: 128.679993, low: 127.620003, close: 128.210007 },
+{ time: '2012-01-27', open: 128.470001, high: 128.470001, low: 127.480003, close: 128.220001 },
+{ time: '2012-01-28', open: 127.82, high: 127.989998, low: 127.199997, close: 127.639999 },
+{ time: '2012-01-29', open: 127.489998, high: 127.559998, low: 126.610001, close: 126.949997 },
+{ time: '2012-01-30', open: 126.919998, high: 126.949997, low: 125.690002, close: 126.309998 },
+{ time: '2012-01-31', open: 126.199997, high: 127.699997, low: 125.720001, close: 127.32 },
+{ time: '2012-02-01', open: 128.25, high: 128.380005, low: 127.199997, close: 127.760002 },
+{ time: '2012-02-02', open: 128, high: 128.899994, low: 128, close: 128.580002 },
+{ time: '2012-02-03', open: 129.270004, high: 129.699997, low: 128.919998, close: 129.350006 },
+{ time: '2012-02-04', open: 129.369995, high: 129.869995, low: 128.460007, close: 128.610001 },
+{ time: '2012-02-05', },
+{ time: '2012-02-06', },
+{ time: '2012-02-07', },
+{ time: '2012-02-08', },
+{ time: '2012-02-09', open: 128.610001, high: 128.610001, low: 128.610001, close: 128.610001 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2012-02-09',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.89,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2012-01-10', value: 4570000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-11', value: 4196900,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-01-12', value: 2988300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-01-13', value: 4331300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-01-14', value: 2522300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-15', value: 2394700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-01-16', value: 2307100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-01-17', value: 2329000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-18', value: 3075200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-19', value: 3070300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-20', value: 3032700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-21', value: 4576000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-22', value: 3966500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-01-23', value: 2975300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-24', value: 4913800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-25', value: 6103500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-01-26', value: 4866400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-01-27', value: 3068200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-28', value: 1988200,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-29', value: 3107300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-30', value: 3261700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-01-31', value: 3377500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-02-01', value: 3135300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2012-02-02', value: 2721800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-02-03', value: 5635700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2012-02-04', value: 2890300,color: 'rgba(255,82,82, 0.8)' },
+])
+</script>
+</body>
+</html>

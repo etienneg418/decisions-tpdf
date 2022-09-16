@@ -1,0 +1,151 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2002-12-17', open: 168.139999, high: 168.869995, low: 167.699997, close: 168.809998 },
+{ time: '2002-12-18', open: 168.270004, high: 169.25, low: 168.070007, close: 169.119995 },
+{ time: '2002-12-19', open: 168.970001, high: 169.660004, low: 168.619995, close: 168.889999 },
+{ time: '2002-12-20', open: 168.850006, high: 169.979996, low: 168.639999, close: 169.610001 },
+{ time: '2002-12-21', open: 169.660004, high: 169.75, low: 168.559998, close: 168.649994 },
+{ time: '2002-12-22', open: 168.160004, high: 170.5, low: 168.119995, close: 170.5 },
+{ time: '2002-12-23', open: 169.570007, high: 169.600006, low: 167.360001, close: 168.270004 },
+{ time: '2002-12-24', open: 168.259995, high: 168.259995, low: 166.460007, close: 167.160004 },
+{ time: '2002-12-25', open: 167.210007, high: 167.699997, low: 166.690002, close: 167.570007 },
+{ time: '2002-12-26', open: 166.5, high: 166.770004, low: 164.009995, close: 164.360001 },
+{ time: '2002-12-27', open: 164.720001, high: 166.779999, low: 164.509995, close: 166.369995 },
+{ time: '2002-12-28', open: 164.809998, high: 164.860001, low: 162.25, close: 162.259995 },
+{ time: '2002-12-29', open: 162.699997, high: 163.220001, low: 161.660004, close: 161.729996 },
+{ time: '2002-12-30', open: 162.589996, high: 164.520004, low: 162.570007, close: 164.470001 },
+{ time: '2002-12-31', open: 164.020004, high: 164.389999, low: 161.779999, close: 162.740005 },
+{ time: '2003-01-01', open: 163.580002, high: 166.270004, low: 163.580002, close: 166.210007 },
+{ time: '2003-01-02', open: 165.520004, high: 165.529999, low: 163.380005, close: 164.229996 },
+{ time: '2003-01-03', open: 163.160004, high: 166.949997, low: 162.050003, close: 166.470001 },
+{ time: '2003-01-04', open: 166.160004, high: 166.210007, low: 164.850006, close: 165.660004 },
+{ time: '2003-01-05', open: 166.089996, high: 167.130005, low: 165.389999, close: 166.490005 },
+{ time: '2003-01-06', open: 166.830002, high: 166.910004, low: 165.830002, close: 166.130005 },
+{ time: '2003-01-07', open: 165.580002, high: 167.649994, low: 165.529999, close: 166.320007 },
+{ time: '2003-01-08', open: 166.240005, high: 166.520004, low: 162.660004, close: 162.699997 },
+{ time: '2003-01-09', open: 162, high: 163.369995, low: 161.210007, close: 162.589996 },
+{ time: '2003-01-10', open: 162.360001, high: 163.899994, low: 162.020004, close: 163.5 },
+{ time: '2003-01-11', open: 164.199997, high: 166.770004, low: 164.199997, close: 166.050003 },
+{ time: '2003-01-12', open: 165.410004, high: 166, low: 164.619995, close: 164.949997 },
+{ time: '2003-01-13', open: 164.289993, high: 164.539993, low: 161.899994, close: 162.520004 },
+{ time: '2003-01-14', open: 163.380005, high: 163.970001, low: 162.119995, close: 162.800003 },
+{ time: '2003-01-15', open: 161.660004, high: 165.990005, low: 161.399994, close: 165.479996 },
+{ time: '2003-01-16', open: 165.399994, high: 167.570007, low: 165.279999, close: 166.210007 },
+{ time: '2003-01-17', open: 166.210007, high: 167.220001, low: 165.210007, close: 166.270004 },
+{ time: '2003-01-18', open: 166.25, high: 167.179993, low: 165.080002, close: 166.789993 },
+{ time: '2003-01-19', open: 167.5, high: 167.699997, low: 166.220001, close: 167.070007 },
+{ time: '2003-01-20', open: 166.759995, high: 167.360001, low: 165.600006, close: 165.839996 },
+{ time: '2003-01-21', open: 165.320007, high: 166.479996, low: 164.169998, close: 165.990005 },
+{ time: '2003-01-22', open: 166.720001, high: 167.339996, low: 165.860001, close: 166.440002 },
+{ time: '2003-01-23', open: 165.729996, high: 166.649994, low: 165.100006, close: 165.889999 },
+{ time: '2003-01-24', open: 164.529999, high: 164.539993, low: 161.130005, close: 161.710007 },
+{ time: '2003-01-25', open: 163, high: 165.389999, low: 162.729996, close: 164.509995 },
+{ time: '2003-01-26', open: 165.649994, high: 165.699997, low: 163.619995, close: 164 },
+{ time: '2003-01-27', open: 163.809998, high: 164.889999, low: 162.570007, close: 164.669998 },
+{ time: '2003-01-28', },
+{ time: '2003-01-29', },
+{ time: '2003-01-30', },
+{ time: '2003-01-31', },
+{ time: '2003-02-01', open: 164.669998, high: 164.669998, low: 164.669998, close: 164.669998 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2003-02-01',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.90,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2002-12-17', value: 1836000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-12-18', value: 1770300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-12-19', value: 2019100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-12-20', value: 1789400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-12-21', value: 1946000,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-12-22', value: 2223100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-12-23', value: 2232400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-12-24', value: 1575700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-12-25', value: 1547200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-12-26', value: 2114400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-12-27', value: 1608100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-12-28', value: 2564600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-12-29', value: 1894300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2002-12-30', value: 1715000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2002-12-31', value: 2284700,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-01', value: 2111200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-02', value: 2557900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-03', value: 3062400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-04', value: 1953500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-05', value: 4371800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-06', value: 2157300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-07', value: 2091000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-08', value: 2540900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-09', value: 2050700,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-10', value: 1722600,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-11', value: 1684000,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-12', value: 2081300,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-13', value: 2148100,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-14', value: 1852600,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-15', value: 2560300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-16', value: 2479500,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-17', value: 1754400,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-18', value: 1680100,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-19', value: 1501900,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-20', value: 1860400,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-21', value: 1914300,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-22', value: 1995800,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-23', value: 1662800,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-24', value: 3063500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-25', value: 2394200,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2003-01-26', value: 1970500,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2003-01-27', value: 2228800,color: 'rgba(0, 150, 136, 0.8)' },
+])
+</script>
+</body>
+</html>

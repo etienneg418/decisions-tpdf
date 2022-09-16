@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2019-01-10', open: 12.998102, high: 13.273245, low: 12.922201, close: 13.263757 },
+{ time: '2019-01-11', open: 13.273245, high: 13.624288, low: 13.216319, close: 13.548387 },
+{ time: '2019-01-12', open: 13.444023, high: 13.519924, low: 13.055028, close: 13.197343 },
+{ time: '2019-01-13', open: 13.301708, high: 13.690702, low: 13.140417, close: 13.434535 },
+{ time: '2019-01-14', open: 13.595825, high: 13.766603, low: 13.519924, close: 13.662239 },
+{ time: '2019-01-15', open: 13.377609, high: 13.681214, low: 13.377609, close: 13.425047 },
+{ time: '2019-01-16', open: 13.510436, high: 14.43074, low: 13.472486, close: 14.165085 },
+{ time: '2019-01-17', open: 14.316888, high: 14.800759, low: 14.212524, close: 14.487666 },
+{ time: '2019-01-18', open: 14.478178, high: 14.705882, low: 14.411765, close: 14.55408 },
+{ time: '2019-01-19', open: 14.402277, high: 14.506641, low: 14.127135, close: 14.240987 },
+{ time: '2019-01-20', open: 14.250474, high: 14.449715, low: 14.212524, close: 14.411765 },
+{ time: '2019-01-21', open: 14.411765, high: 14.506641, low: 14.250474, close: 14.326376 },
+{ time: '2019-01-22', open: 14.373814, high: 14.544592, low: 14.250474, close: 14.335863 },
+{ time: '2019-01-23', open: 14.259962, high: 14.411765, low: 13.927894, close: 14.070209 },
+{ time: '2019-01-24', open: 14.079696, high: 14.316888, low: 13.918406, close: 14.193548 },
+{ time: '2019-01-25', open: 14.136622, high: 14.402277, low: 13.975332, close: 14.250474 },
+{ time: '2019-01-26', open: 14.231499, high: 14.278937, low: 13.842505, close: 13.908918 },
+{ time: '2019-01-27', open: 14.003795, high: 14.098672, low: 13.823529, close: 13.937381 },
+{ time: '2019-01-28', open: 14.041746, high: 14.421252, low: 13.899431, close: 14.411765 },
+{ time: '2019-01-29', open: 14.573055, high: 14.658444, low: 13.946869, close: 14.003795 },
+{ time: '2019-01-30',  },
+{ time: '2019-01-31',  },
+{ time: '2019-02-01',  },
+{ time: '2019-02-02',  },
+{ time: '2019-02-03', open: 14.003795, high: 14.003795, low: 14.003795, close: 14.003795 },
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2019-02-03',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+const volumeSeries = chart.addHistogramSeries({
+    color: '#26a69a',
+	priceFormat: {
+		type: 'volume',
+	},
+	priceScaleId: '',
+	scaleMargins: {
+		top: 0.89,
+		bottom: 0.,
+	},
+});
+volumeSeries.setData([
+{ time: '2019-01-10', value: 65592106,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-11', value: 67748696,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-12', value: 63925838,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2019-01-13', value: 78979698,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-14', value: 59609602,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-15', value: 55851038,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-16', value: 122986833,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-17', value: 103565091,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-18', value: 51456385,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-19', value: 53507469,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2019-01-20', value: 42393988,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-21', value: 35973020,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2019-01-22', value: 37962867,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2019-01-23', value: 51984123,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2019-01-24', value: 35592104,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-25', value: 52485195,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-26', value: 37303168,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2019-01-27', value: 44928858,color: 'rgba(255,82,82, 0.8)' },
+{ time: '2019-01-28', value: 72711455,color: 'rgba(0, 150, 136, 0.8)' },
+{ time: '2019-01-29', value: 74311638,color: 'rgba(255,82,82, 0.8)' },
+])
+</script>
+</body>
+</html>

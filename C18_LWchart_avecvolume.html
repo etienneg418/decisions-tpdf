@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chart</title>
+  <meta name="description" content="Chart">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ <script>
+
+    const chart = LightweightCharts.createChart(document.body,
+        { width: 600,
+          height: 400,
+          crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+          }
+        });
+    const candleSeries = chart.addCandlestickSeries();
+    candleSeries.setData([
+    { time: '2019-02-07', open: 60.450001, high: 61.189999, low: 60.099998, close: 60.459999 },
+{ time: '2019-02-08', open: 62, high: 62.869999, low: 61.799999, close: 62.689999 },
+{ time: '2019-02-09', open: 63.209999, high: 64.540001, low: 63.18, close: 64.389999 },
+{ time: '2019-02-10', open: 63.810001, high: 64.300003, low: 63.77, close: 64.07 },
+{ time: '2019-02-11', open: 63.650002, high: 64.199997, low: 63.509998, close: 64.110001 },
+{ time: '2019-02-12', open: 64.07, high: 65.300003, low: 64.07, close: 64.949997 },
+{ time: '2019-02-13', open: 63.450001, high: 65.599998, low: 63.400002, close: 65.57 },
+{ time: '2019-02-14', open: 65.389999, high: 65.739998, low: 64.93, close: 65.379997 },
+{ time: '2019-02-15', open: 65.589996, high: 65.970001, low: 65.400002, close: 65.720001 },
+{ time: '2019-02-16', open: 65.919998, high: 66.309998, low: 65.809998, close: 66.209999 },
+{ time: '2019-02-17', open: 66.110001, high: 66.459999, low: 66.010002, close: 66.260002 },
+{ time: '2019-02-18', open: 66, high: 66.32, low: 65.370003, close: 65.669998 },
+{ time: '2019-02-19', open: 65.449997, high: 65.610001, low: 64.800003, close: 65.010002 },
+{ time: '2019-02-20', open: 65.25, high: 65.5, low: 65.120003, close: 65.269997 },
+{ time: '2019-02-21', open: 65.110001, high: 65.760002, low: 65.07, close: 65.629997 },
+{ time: '2019-02-22', open: 65.610001, high: 65.800003, low: 65.279999, close: 65.760002 },
+{ time: '2019-02-23', open: 66.32, high: 66.739998, low: 65.809998, close: 66.57 },
+{ time: '2019-02-24', open: 66.040001, high: 67.370003, low: 65.82, close: 67.190002 },
+{ time: '2019-02-25', open: 67.089996, high: 67.25, low: 65.949997, close: 66.620003 },
+{ time: '2019-02-26', open: 66.410004, high: 66.790001, low: 66.190002, close: 66.370003 },
+{ time: '2019-02-27', open: 66.230003, high: 66.480003, low: 65.860001, close: 66.400002 },
+{ time: '2019-02-28', open: 66.169998, high: 66.510002, low: 65.940002, close: 66.5 },
+{ time: '2019-03-01', open: 66.529999, high: 66.529999, low: 65.849998, close: 66.389999 },
+{ time: '2019-03-02', open: 66.25, high: 66.330002, low: 65.279999, close: 65.690002 },
+{ time: '2019-03-03', open: 65.190002, high: 65.690002, low: 65.080002, close: 65.559998 },
+{ time: '2019-03-04', open: 65.739998, high: 66.230003, low: 65.5, close: 65.779999 },
+{ time: '2019-03-05', open: 66.290001, high: 66.589996, low: 66.07, close: 66.290001 },
+{ time: '2019-03-06', open: 65.589996, high: 65.779999, low: 65.279999, close: 65.510002 },
+{ time: '2019-03-07', open: 65.790001, high: 66.970001, low: 65.599998, close: 66.769997 },
+{ time: '2019-03-08', open: 67.309998, high: 67.339996, low: 66.989998, close: 67.290001 },
+{ time: '2019-03-09', open: 67.019997, high: 67.290001, low: 66.459999, close: 66.480003 },
+{ time: '2019-03-10', open: 66.440002, high: 66.760002, low: 66.279999, close: 66.480003 },
+{ time: '2019-03-11', open: 65.839996, high: 66.360001, low: 65.800003, close: 66.089996 },
+{ time: '2019-03-12', open: 65.870003, high: 66.220001, low: 65.839996, close: 66.050003 },
+{ time: '2019-03-13', open: 66, high: 66.279999, low: 65.5, close: 65.5 },
+{ time: '2019-03-14', open: 65.489998, high: 66.230003, low: 65.18, close: 66.139999 },
+{ time: '2019-03-15', open: 66.330002, high: 67.279999, low: 66.169998, close: 66.779999 },
+{ time: '2019-03-16', open: 66.489998, high: 66.68, low: 66.089996, close: 66.089996 },
+{ time: '2019-03-17', open: 66.32, high: 66.959999, low: 66.260002, close: 66.589996 },
+{ time: '2019-03-18', open: 66.949997, high: 67.360001, low: 66.75, close: 67.099998 },
+{ time: '2019-03-19', open: 67, high: 67, low: 65.709999, close: 66.160004 },
+{ time: '2019-03-20', open: 65.699997, high: 66.349998, low: 65.470001, close: 66.32 },
+{ time: '2019-03-21', open: 66.629997, high: 66.949997, low: 66.190002, close: 66.290001 },
+{ time: '2019-03-22', open: 66.080002, high: 66.739998, low: 66.07, close: 66.510002 },
+{ time: '2019-03-23', open: 66.519997, high: 66.75, low: 66.160004, close: 66.489998 },
+{ time: '2019-03-24', open: 66.470001, high: 66.620003, low: 66.050003, close: 66.07 },
+{ time: '2019-03-25', open: 65.540001, high: 65.739998, low: 64.690002, close: 65.669998 },
+{ time: '2019-03-26', open: 65.57, high: 65.610001, low: 64.830002, close: 65.059998 },
+{ time: '2019-03-27', open: 65.290001, high: 65.610001, low: 65, close: 65.25 },
+{ time: '2019-03-28', open: 65.589996, high: 66.120003, low: 65.379997, close: 65.910004 },
+{ time: '2019-03-29', open: 66.230003, high: 66.589996, low: 65.93, close: 66.309998 },
+{ time: '2019-03-30', open: 66.419998, high: 66.910004, low: 66.25, close: 66.519997 },
+{ time: '2019-03-31', },
+{ time: '2019-04-01', },
+{ time: '2019-04-02', },
+{ time: '2019-04-03', },
+{ time: '2019-04-04', open: 66.519997, high: 66.519997, low: 66.519997, close: 66.519997 },
+
+    ]);
+    const screenshot = chart.takeScreenshot();
+    candleSeries.setMarkers([
+    {
+        time: '2019-04-04',
+        position: 'inBar',
+        color: 'blue',
+        shape: 'circle',
+        text: '',
+        size: 1,
+    },
+]);
+    chart.timeScale().fitContent();
+    chart.applyOptions({
+    rightPriceScale: {
+        scaleMargins: {
+            top: 0,
+            bottom: 0,
+        },
+    },
+});
+</script>
+</body>
+</html>
